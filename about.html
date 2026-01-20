@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MoodFoodz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FEFAE0;
+            --yellow: #FFB703;
+            --teal: #2A9D8F;
+            --dark: #1a1a1a;
+            --orange: #FB8500;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            background: white;
+            border-bottom: 4px solid var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 0.75rem 2rem;
+            border: 3px solid var(--dark);
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 4px 4px 0 var(--dark);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            box-shadow: 6px 6px 0 var(--dark);
+            transform: translate(-2px, -2px);
+        }
+
+        .page-header {
+            background: var(--teal);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+            border-bottom: 4px solid var(--dark);
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .story-section {
+            background: white;
+            padding: 3rem;
+            border: 3px solid var(--dark);
+            box-shadow: 8px 8px 0 var(--dark);
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .highlight-box {
+            background: var(--yellow);
+            padding: 2rem;
+            border: 3px solid var(--dark);
+            box-shadow: 6px 6px 0 var(--dark);
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border: 3px solid var(--dark);
+            box-shadow: 5px 5px 0 var(--dark);
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0 var(--dark);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .value-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .stats-section {
+            background: var(--teal);
+            color: white;
+            padding: 4rem 5%;
+            border-top: 4px solid var(--dark);
+            border-bottom: 4px solid var(--dark);
+            margin: 4rem 0;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .team-section {
+            background: white;
+            padding: 3rem;
+            border: 3px solid var(--dark);
+            box-shadow: 8px 8px 0 var(--dark);
+            margin-bottom: 3rem;
+        }
+
+        .cta-section {
+            background: var(--yellow);
+            padding: 4rem;
+            border: 3px solid var(--dark);
+            box-shadow: 8px 8px 0 var(--dark);
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+            padding: 1.25rem 3rem;
+            border: 3px solid var(--dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 6px 6px 0 var(--dark);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 8px 8px 0 var(--dark);
+            transform: translate(-2px, -2px);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .page-header {
+                padding: 3rem 5%;
+            }
+
+            .story-section, .team-section, .cta-section {
+                padding: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">MoodFoodz</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="https://app.moodfoodz.com" class="nav-cta">Try It Free</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Our Story</h1>
+        <p class="page-subtitle">We believe cooking should match how you feel, not follow rigid meal plans.</p>
+    </div>
+
+    <div class="content-section">
+        <div class="story-section">
+            <h2>The Problem We Solve</h2>
+            <p>
+                We've all been there: standing in front of an open fridge, hungry and tired, staring at random ingredients wondering "what can I even make with this?"
+            </p>
+            <p>
+                Traditional recipe apps assume you have time to meal plan, shop for specific ingredients, and follow complex cooking steps. But real life doesn't work that way.
+            </p>
+            <div class="highlight-box">
+                <p>💡 What if your fridge could inspire you instead of overwhelm you?</p>
+            </div>
+            <p>
+                That's why we built MoodFoodz. We wanted to create something that meets you where you are - with the ingredients you have and the mood you're in - and gets you cooking in minutes, not hours.
+            </p>
+        </div>
+
+        <div class="story-section">
+            <h2>How We're Different</h2>
+            
+            <h3>🎯 Mood-First Cooking</h3>
+            <p>
+                We don't believe in one-size-fits-all meal plans. Some days you want comfort food. Other days you want something energizing or adventurous. MoodFoodz is the first app that matches recipes to your emotional state, not just your ingredients.
+            </p>
+
+            <h3>⚡ Actually Fast</h3>
+            <p>
+                Every recipe we generate takes 5-10 minutes to cook. No exceptions. We know you're hungry now, not in an hour.
+            </p>
+
+            <h3>🤖 Powered by AI</h3>
+            <p>
+                Our advanced AI doesn't just recognize ingredients - it understands flavors, cuisines, dietary needs, and how to combine what you have into something delicious.
+            </p>
+
+            <h3>♻️ Zero Waste Philosophy</h3>
+            <p>
+                We prioritize using what's already in your fridge. Every recipe we suggest helps reduce food waste while saving you money and trips to the grocery store.
+            </p>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">5-10</div>
+                <div class="stat-label">Minutes to Cook</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Mood Vibes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Cuisine Styles</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Recipe Possibilities</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="team-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">🎨</span>
+                    <h3>Creativity</h3>
+                    <p>Food should be fun and experimental, not stressful and rigid.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">⚡</span>
+                    <h3>Simplicity</h3>
+                    <p>Great cooking doesn't require complex techniques or fancy equipment.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌍</span>
+                    <h3>Sustainability</h3>
+                    <p>Using what you have reduces waste and helps the planet.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">💚</span>
+                    <h3>Inclusivity</h3>
+                    <p>Everyone deserves delicious food that fits their dietary needs and preferences.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Transform Your Cooking?</h2>
+            <p>Join thousands who've discovered the joy of mood-matched meals.</p>
+            <a href="https://app.moodfoodz.com" class="btn-primary">Start Cooking Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MoodFoodz</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="mailto:hello@moodfoodz.com">Contact</a>
+            </div>
+            <div class="copyright">
+                © 2026 MoodFoodz. Made with ❤️ for hungry people everywhere.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
