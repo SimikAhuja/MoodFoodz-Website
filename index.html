@@ -111,7 +111,7 @@
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 5% 6rem;
+            padding: 2rem 5% 3rem;
             text-align: center;
             position: relative;
             z-index: 10;
@@ -119,10 +119,10 @@
 
         .tagline {
             font-family: 'Fraunces', serif;
-            font-size: clamp(3rem, 8vw, 7rem);
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 900;
             line-height: 0.95;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             letter-spacing: -2px;
             animation: fadeInUp 0.8s ease-out;
         }
@@ -150,11 +150,11 @@
         }
 
         .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.2rem);
             font-weight: 500;
             max-width: 600px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.6;
+            margin: 0 auto 1.5rem;
+            line-height: 1.5;
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
@@ -169,10 +169,10 @@
         .btn-primary {
             background: var(--teal);
             color: white;
-            padding: 1.25rem 3rem;
+            padding: 1rem 2.5rem;
             border: 3px solid var(--dark);
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             box-shadow: 6px 6px 0 var(--dark);
             cursor: pointer;
             transition: all 0.2s;
@@ -189,10 +189,10 @@
         .btn-secondary {
             background: white;
             color: var(--dark);
-            padding: 1.25rem 3rem;
+            padding: 1rem 2.5rem;
             border: 3px solid var(--dark);
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             box-shadow: 6px 6px 0 var(--dark);
             cursor: pointer;
             transition: all 0.2s;
@@ -207,27 +207,49 @@
         }
 
         .hero-image {
-            margin-top: 4rem;
+            margin-top: 2rem;
             position: relative;
             animation: fadeInUp 0.8s ease-out 0.6s backwards;
         }
 
-        .app-cover {
-            max-width: 600px;
+        .phone-mockup {
+            max-width: 320px;
             margin: 0 auto;
-            border: 4px solid var(--dark);
-            border-radius: 20px;
+            position: relative;
+            padding: 1rem;
+        }
+
+        .phone-frame {
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3),
+                        0 0 0 4px var(--dark),
+                        inset 0 0 0 2px #333;
+            position: relative;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: 12px 12px 0 var(--dark);
-            transition: all 0.3s;
+            background: white;
+            position: relative;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
         }
 
-        .app-cover:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 16px 16px 0 var(--dark);
-        }
-
-        .app-cover img {
+        .phone-screen img {
             width: 100%;
             height: auto;
             display: block;
@@ -334,14 +356,14 @@
         }
 
         .vibe-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .vibe-card {
             background: white;
@@ -369,6 +391,91 @@
             font-family: 'Fraunces', serif;
             font-size: 1.5rem;
             font-weight: 700;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border: 4px solid var(--dark);
+            box-shadow: 12px 12px 0 var(--dark);
+            max-width: 500px;
+            width: 100%;
+            padding: 2.5rem;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--dark);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--teal);
+            transform: rotate(90deg);
+        }
+
+        .modal-emoji {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+            text-align: center;
         }
 
         /* Features section */
@@ -551,8 +658,13 @@
             </div>
 
             <div class="hero-image">
-                <div class="app-cover">
-                    <img src="MoodFoofz_cover.png" alt="MoodFoodz - Snap. Vibe. Cook. Turn your fridge into inspiration. Quick recipes in 5-10 minutes.">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <img src="app-screenshot.png" alt="MoodFoodz App - Snap your fridge, pick your vibe, cook in minutes">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -588,27 +700,27 @@
         <div class="vibes-content">
             <h2 class="section-title">Match Your Mood</h2>
             <div class="vibe-grid">
-                <div class="vibe-card">
+                <div class="vibe-card" onclick="openVibeModal('chill')">
                     <span class="vibe-emoji">😌</span>
                     <div class="vibe-name">Chill</div>
                 </div>
-                <div class="vibe-card">
+                <div class="vibe-card" onclick="openVibeModal('bold')">
                     <span class="vibe-emoji">🔥</span>
                     <div class="vibe-name">Bold</div>
                 </div>
-                <div class="vibe-card">
+                <div class="vibe-card" onclick="openVibeModal('calm')">
                     <span class="vibe-emoji">🧘</span>
                     <div class="vibe-name">Calm</div>
                 </div>
-                <div class="vibe-card">
+                <div class="vibe-card" onclick="openVibeModal('cozy')">
                     <span class="vibe-emoji">🏠</span>
                     <div class="vibe-name">Cozy</div>
                 </div>
-                <div class="vibe-card">
+                <div class="vibe-card" onclick="openVibeModal('energized')">
                     <span class="vibe-emoji">⚡</span>
                     <div class="vibe-name">Energized</div>
                 </div>
-                <div class="vibe-card">
+                <div class="vibe-card" onclick="openVibeModal('hot')">
                     <span class="vibe-emoji">🌶️</span>
                     <div class="vibe-name">Hot</div>
                 </div>
@@ -669,7 +781,7 @@
                 <a href="about.html">About</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
-                <a href="mailto:hello@moodfoodz.com">Contact</a>
+                <a href="/cdn-cgi/l/email-protection#f59d9099999ab5989a9a91939a9a918fdb969a98">Contact</a>
             </div>
             <div class="copyright">
                 © 2026 MoodFoodz. Made with ❤️ for hungry people everywhere.
@@ -677,7 +789,77 @@
         </div>
     </footer>
 
+    <!-- Vibe Modal -->
+    <div class="modal-overlay" id="vibeModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeVibeModal()">×</button>
+            <div class="modal-emoji" id="modalEmoji"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-description" id="modalDescription"></p>
+        </div>
+    </div>
+
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Vibe descriptions
+        const vibeInfo = {
+            chill: {
+                emoji: '😌',
+                title: 'Chill',
+                description: 'Light, easy-going meals perfect for laid-back moments. Think fresh salads, simple pastas, and casual comfort food that won\'t weigh you down.'
+            },
+            bold: {
+                emoji: '🔥',
+                title: 'Bold',
+                description: 'Spicy, intense flavors that pack a punch! For when you want something exciting and adventurous that awakens your taste buds.'
+            },
+            calm: {
+                emoji: '🧘',
+                title: 'Calm',
+                description: 'Soothing, gentle dishes that bring peace to your day. Warm soups, herbal teas, and nourishing comfort foods for mindful moments.'
+            },
+            cozy: {
+                emoji: '🏠',
+                title: 'Cozy',
+                description: 'Warm, comforting classics that feel like a hug. Mac & cheese, stews, and hearty home-cooked meals for ultimate coziness.'
+            },
+            energized: {
+                emoji: '⚡',
+                title: 'Energized',
+                description: 'Fresh, vibrant dishes that fuel your day! Protein-packed meals and nutrient-rich recipes to keep you going strong.'
+            },
+            hot: {
+                emoji: '🌶️',
+                title: 'Hot',
+                description: 'Fiery, spicy cuisine that brings the heat! For spice lovers who like their food with an extra kick and lots of flavor.'
+            }
+        };
+
+        function openVibeModal(vibe) {
+            const info = vibeInfo[vibe];
+            document.getElementById('modalEmoji').textContent = info.emoji;
+            document.getElementById('modalTitle').textContent = info.title;
+            document.getElementById('modalDescription').textContent = info.description;
+            document.getElementById('vibeModal').classList.add('active');
+        }
+
+        function closeVibeModal() {
+            document.getElementById('vibeModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('vibeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVibeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVibeModal();
+            }
+        });
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -702,12 +884,4 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe step cards and feature cards
-        document.querySelectorAll('.step, .feature, .vibe-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = '
+                    entry.targe
