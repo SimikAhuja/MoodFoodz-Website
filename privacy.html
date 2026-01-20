@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - MoodFoodz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FEFAE0;
+            --yellow: #FFB703;
+            --teal: #2A9D8F;
+            --dark: #1a1a1a;
+            --orange: #FB8500;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            background: white;
+            border-bottom: 4px solid var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 0.75rem 2rem;
+            border: 3px solid var(--dark);
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 4px 4px 0 var(--dark);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            box-shadow: 6px 6px 0 var(--dark);
+            transform: translate(-2px, -2px);
+        }
+
+        .page-header {
+            background: var(--teal);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+            border-bottom: 4px solid var(--dark);
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+        }
+
+        .last-updated {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .policy-content {
+            background: white;
+            padding: 3rem;
+            border: 3px solid var(--dark);
+            box-shadow: 8px 8px 0 var(--dark);
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 2.5rem 0 1rem;
+            letter-spacing: -1px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .highlight-box {
+            background: var(--yellow);
+            padding: 1.5rem;
+            border: 3px solid var(--dark);
+            box-shadow: 4px 4px 0 var(--dark);
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: var(--orange);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .page-header {
+                padding: 3rem 5%;
+            }
+
+            .policy-content {
+                padding: 2rem;
+            }
+
+            ul, ol {
+                margin-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">MoodFoodz</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="https://app.moodfoodz.com" class="nav-cta">Try It Free</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="last-updated">Last Updated: January 19, 2026</p>
+    </div>
+
+    <div class="content-section">
+        <div class="policy-content">
+            <div class="highlight-box">
+                <p><strong>TL;DR:</strong> We respect your privacy. We don't sell your data. We only collect what's necessary to make MoodFoodz work great for you.</p>
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>
+                Welcome to MoodFoodz! We're committed to protecting your privacy and being transparent about how we handle your information. This Privacy Policy explains what data we collect, why we collect it, and how we use it.
+            </p>
+
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Information You Provide</h3>
+            <ul>
+                <li><strong>Photos:</strong> Images of your fridge/pantry that you upload to generate recipe suggestions</li>
+                <li><strong>Preferences:</strong> Your selected mood/vibe, dietary restrictions, cuisine preferences, and dish types</li>
+                <li><strong>Feedback:</strong> Recipe ratings and optional comments you submit</li>
+                <li><strong>Saved Recipes:</strong> Recipes you choose to save (stored locally on your device)</li>
+            </ul>
+
+            <h3>2.2 Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Usage Data:</strong> How you interact with MoodFoodz (features used, recipes generated, time spent)</li>
+                <li><strong>Device Information:</strong> Browser type, operating system, device type, screen resolution</li>
+                <li><strong>Log Data:</strong> IP address, access times, pages viewed, crashes or errors</li>
+            </ul>
+
+            <h3>2.3 Information from Third Parties</h3>
+            <p>
+                We use OpenAI's API for ingredient detection and recipe generation. When you upload photos, they are processed by OpenAI's Vision API. OpenAI has its own privacy policy governing their data handling practices.
+            </p>
+
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li><strong>Provide Our Service:</strong> Detect ingredients, generate personalized recipes, and match them to your preferences</li>
+                <li><strong>Improve MoodFoodz:</strong> Analyze usage patterns to enhance features and fix bugs</li>
+                <li><strong>Personalize Experience:</strong> Remember your dietary preferences and recipe history</li>
+                <li><strong>Communicate:</strong> Send important updates about service changes or new features (if you opt-in)</li>
+                <li><strong>Safety & Security:</strong> Detect and prevent fraud, abuse, or security issues</li>
+            </ul>
+
+            <h2>4. Data Storage and Security</h2>
+            
+            <h3>4.1 Local Storage</h3>
+            <p>
+                Your saved recipes and some preferences are stored locally in your browser using localStorage. This data stays on your device and is not transmitted to our servers unless you explicitly take an action (like rating a recipe).
+            </p>
+
+            <h3>4.2 Cloud Storage</h3>
+            <p>
+                Photos you upload and recipe generation requests are processed through our servers and OpenAI's API. We do not permanently store your uploaded photos after processing. Generated recipes and feedback are stored in our database for service improvement.
+            </p>
+
+            <h3>4.3 Security Measures</h3>
+            <ul>
+                <li>Industry-standard encryption for data in transit (HTTPS/TLS)</li>
+                <li>Secure cloud infrastructure with access controls</li>
+                <li>Regular security audits and updates</li>
+                <li>Limited employee access to user data (need-to-know basis)</li>
+            </ul>
+
+            <h2>5. Data Sharing and Disclosure</h2>
+            <p><strong>We do not sell your personal information. Period.</strong></p>
+            
+            <p>We may share your information only in these limited circumstances:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> With trusted third parties (like OpenAI, cloud hosting providers) who help us operate MoodFoodz</li>
+                <li><strong>Legal Compliance:</strong> When required by law, court order, or government request</li>
+                <li><strong>Safety & Protection:</strong> To protect the rights, property, or safety of MoodFoodz, our users, or the public</li>
+                <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets (users will be notified)</li>
+            </ul>
+
+            <h2>6. Your Privacy Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+                <li><strong>Correction:</strong> Ask us to correct inaccurate or incomplete data</li>
+                <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal obligations)</li>
+                <li><strong>Opt-Out:</strong> Decline optional data collection or marketing communications</li>
+                <li><strong>Data Portability:</strong> Request your data in a machine-readable format</li>
+            </ul>
+            
+            <p>To exercise these rights, contact us at <a href="/cdn-cgi/l/email-protection#6b1b19021d0a08122b0604040f0d04040f1145080406"><span class="__cf_email__" data-cfemail="7101031807101208311c1e1e15171e1e150b5f121e1c">[email&#160;protected]</span></a></p>
+
+            <h2>7. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+                <li>Remember your preferences and settings</li>
+                <li>Understand how you use MoodFoodz</li>
+                <li>Improve performance and user experience</li>
+            </ul>
+            <p>You can control cookies through your browser settings. Note that disabling cookies may affect some features.</p>
+
+            <h2>8. Children's Privacy</h2>
+            <p>
+                MoodFoodz is not intended for children under 13. We do not knowingly collect personal information from children. If we learn we have collected data from a child under 13, we will delete it promptly.
+            </p>
+
+            <h2>9. International Users</h2>
+            <p>
+                MoodFoodz is operated from the United States. If you're accessing from outside the U.S., your information may be transferred to and processed in the U.S., which may have different data protection laws than your country.
+            </p>
+
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time. We'll notify you of significant changes by posting the new policy on this page and updating the "Last Updated" date. Continued use of MoodFoodz after changes constitutes acceptance of the updated policy.
+            </p>
+
+            <h2>11. Contact Us</h2>
+            <p>If you have questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#92e2e0fbe4f3f1ebd2fffdfdf6f4fdfdf6e8bcf1fdff"><span class="__cf_email__" data-cfemail="84f4f6edf2e5e7fdc4e9ebebe0e2ebebe0feaae7ebe9">[email&#160;protected]</span></a></li>
+                <li><strong>General Inquiries:</strong> <a href="/cdn-cgi/l/email-protection#523a373e3e3d123f3d3d36343d3d36287c313d3f"><span class="__cf_email__" data-cfemail="bed6dbd2d2d1fed3d1d1dad8d1d1dac490ddd1d3">[email&#160;protected]</span></a></li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Your trust matters to us.</strong> We're committed to being transparent and protecting your privacy every step of the way.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MoodFoodz</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a
