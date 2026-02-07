@@ -169,7 +169,7 @@
         .btn-primary {
             background: var(--teal);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border: 3px solid var(--dark);
             font-weight: 700;
             font-size: 1.1rem;
@@ -179,8 +179,38 @@
             text-decoration: none;
             display: inline-block;
             font-family: 'Manrope', sans-serif;
+            white-space: nowrap;
+            min-width: 200px;
+            text-align: center;
         }
 
+        .btn-primary:hover {
+            box-shadow: 8px 8px 0 var(--dark);
+            transform: translate(-2px, -2px);
+        }
+
+        .btn-orange {
+            background: #FB8500;
+            color: white;
+            padding: 1rem 2rem;
+            border: 3px solid var(--dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 6px 6px 0 var(--dark);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+            white-space: nowrap;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .btn-orange:hover {
+            box-shadow: 8px 8px 0 var(--dark);
+            transform: translate(-2px, -2px);
+        }
         .btn-primary:hover {
             box-shadow: 8px 8px 0 var(--dark);
             transform: translate(-2px, -2px);
@@ -653,8 +683,9 @@
                 Turn what's in your fridge into mood-matched meals in 5-10 minutes. No planning. No shopping. Just vibes.
             </p>
             <div class="cta-group">
-                <a href="https://app.moodfoodz.com/" class="btn-primary">Get Started Free</a>
+                <a href="https://moodfood-app-2.emergent.host/" class="btn-primary">Launch MoodFoodz App</a>
                 <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+                <a href="install.html" class="btn-orange">How to Install</a>
             </div>
 
             <div class="hero-image">
